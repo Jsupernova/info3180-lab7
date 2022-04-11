@@ -38,10 +38,10 @@ def upload():
         filename = secure_filename(photo.filename)
         photo.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         return '{\
-            "message": "File Upload Successfully".\
+            "message": "File Upload Successfully",\
             "filename": "%s",\
             "description": "%s"\
-        }'% (filename,description)
+        }'% (photo.filename,description)
     return '{\
         "errors": "%s"\
     }' % form_errors(myform)
