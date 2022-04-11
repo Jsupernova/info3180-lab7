@@ -29,7 +29,6 @@ def get_csrf():
 
 @app.route('/api/upload', methods=['POST'])
 def upload():
-    print("hello")
     myform = UploadForm()
 
     if request.method == "POST" and myform.validate_on_submit():
